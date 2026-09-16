@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Example",
+    "sents": [["Apex", "is", "based", "in", "Paris", "."]],
+    "vertexSet": [
+      [{"name": "Apex", "sent_id": 0, "pos": [0, 1], "type": "ORG"}],
+      [{"name": "Paris", "sent_id": 0, "pos": [4, 5], "type": "LOC"}]
+    ],
+    "labels": [{"h": 0, "t": 1, "r": "P159", "evidence": [0]}]
+  },
+  {
+    "title": "Example 2",
+    "sents": [["Beacon", "was", "founded", "by", "Maya", "."]],
+    "vertexSet": [
+      [{"name": "Beacon", "sent_id": 0, "pos": [0, 1], "type": "ORG"}],
+      [{"name": "Maya", "sent_id": 0, "pos": [4, 5], "type": "PER"}]
+    ],
+    "labels": [{"h": 0, "t": 1, "r": "P112", "evidence": [0]}]
+  }
+]

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "knowledge-verification-agents"
+version = "0.2.0"
+description = "LLM-powered multi-agent knowledge extraction and verification system"
+requires-python = ">=3.10"
+dependencies = [
+  "langgraph>=0.2.60",
+  "numpy>=1.26",
+  "pydantic>=2.8",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+demo = ["gradio>=5.0"]
+openai = ["openai>=2.0"]
+rag = ["faiss-cpu>=1.8"]
+
+sdk = [
+  "openai-agents==0.22.2",
+  "pywin32==312; sys_platform == 'win32'",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests", "tests_phase2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+knowledge-agents = "knowledge_agents.cli:main"
+knowledge-agents-eval = "knowledge_agents.evaluation:main"
+knowledge-agents-demo = "knowledge_agents.app:main"
+knowledge-agents-benchmark = "knowledge_agents.benchmark:main"
+knowledge-agents-experiment = "knowledge_agents.experiment:main"
+knowledge-agents-review = "knowledge_agents.review:main"
+knowledge-agents-redocred = "knowledge_agents.redocred:main"
+knowledge-agents-redocred-predict = "knowledge_agents.redocred_predictor:main"
+knowledge-agents-redocred-verify = "knowledge_agents.redocred_verification:main"
+knowledge-agents-formal-experiment = "knowledge_agents.formal_experiment:main"
+knowledge-agents-prepare-redocred = "knowledge_agents.prepare_redocred:main"
+knowledge-agents-verification-challenge = "knowledge_agents.verification_challenge:main"
+knowledge-agents-grounding-review = "knowledge_agents.grounding_review:main"
